@@ -1,5 +1,5 @@
 import React from 'react'
-// import * as BooksAPI from './BooksAPI'
+import * as BooksAPI from './BooksAPI'
 import './App.css'
 
 class BooksApp extends React.Component {
@@ -13,10 +13,17 @@ class BooksApp extends React.Component {
     showSearchPage: false
   }
 
+  componentDidMount() {
+    BooksAPI.getAll().then((books) => {
+      this.setState({ books })
+    })
+  }
+
   render() {
     return (
       <div className="app">
         {this.state.showSearchPage ? (
+
           <div className="search-books">
             <div className="search-books-bar">
               <a className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</a>
@@ -37,7 +44,9 @@ class BooksApp extends React.Component {
               <ol className="books-grid"></ol>
             </div>
           </div>
+
         ) : (
+
           <div className="list-books">
             <div className="list-books-title">
               <h1>MyReads</h1>
@@ -48,6 +57,7 @@ class BooksApp extends React.Component {
                   <h2 className="bookshelf-title">Currently Reading</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
+
                       <li>
                         <div className="book">
                           <div className="book-top">
@@ -66,6 +76,7 @@ class BooksApp extends React.Component {
                           <div className="book-authors">Harper Lee</div>
                         </div>
                       </li>
+
                       <li>
                         <div className="book">
                           <div className="book-top">
@@ -84,6 +95,7 @@ class BooksApp extends React.Component {
                           <div className="book-authors">Orson Scott Card</div>
                         </div>
                       </li>
+
                     </ol>
                   </div>
                 </div>
@@ -92,6 +104,7 @@ class BooksApp extends React.Component {
                   <div className="bookshelf-books">
                     <ol className="books-grid">
                       <li>
+
                         <div className="book">
                           <div className="book-top">
                             <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: 'url("http://books.google.com/books/content?id=uu1mC6zWNTwC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE73pGHfBNSsJG9Y8kRBpmLUft9O4BfItHioHolWNKOdLavw-SLcXADy3CPAfJ0_qMb18RmCa7Ds1cTdpM3dxAGJs8zfCfm8c6ggBIjzKT7XR5FIB53HHOhnsT7a0Cc-PpneWq9zX&source=gbs_api")' }}></div>
@@ -109,6 +122,7 @@ class BooksApp extends React.Component {
                           <div className="book-authors">David McCullough</div>
                         </div>
                       </li>
+
                       <li>
                         <div className="book">
                           <div className="book-top">
@@ -127,6 +141,7 @@ class BooksApp extends React.Component {
                           <div className="book-authors">J.K. Rowling</div>
                         </div>
                       </li>
+
                     </ol>
                   </div>
                 </div>
@@ -134,6 +149,7 @@ class BooksApp extends React.Component {
                   <h2 className="bookshelf-title">Read</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
+
                       <li>
                         <div className="book">
                           <div className="book-top">
@@ -152,6 +168,7 @@ class BooksApp extends React.Component {
                           <div className="book-authors">J.R.R. Tolkien</div>
                         </div>
                       </li>
+
                       <li>
                         <div className="book">
                           <div className="book-top">
@@ -170,6 +187,7 @@ class BooksApp extends React.Component {
                           <div className="book-authors">Seuss</div>
                         </div>
                       </li>
+
                       <li>
                         <div className="book">
                           <div className="book-top">
@@ -188,6 +206,7 @@ class BooksApp extends React.Component {
                           <div className="book-authors">Mark Twain</div>
                         </div>
                       </li>
+
                     </ol>
                   </div>
                 </div>
@@ -197,6 +216,7 @@ class BooksApp extends React.Component {
               <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
             </div>
           </div>
+
         )}
       </div>
     )
