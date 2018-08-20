@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Book from './Book'
+import * as BooksAPI from './BooksAPI'
+import Book from './Books.js'
 // import escapeRegExp from 'escape-string-regexp'
 // import sortBy from 'sort-by'
 
@@ -26,7 +27,7 @@ class SearchBooks extends Component {
           */}
           <input type="text"
             placeholder="Search by title or author"
-            value={query}
+            value={this.state.query}
             onChange={(event) => this.updateQuery(event.target.value)}
           />
           </div>
@@ -35,8 +36,8 @@ class SearchBooks extends Component {
           {/*
             Creates a grid with books for any result larger than one
           */}
-          {books.length ===0 ?(<div>No match</div>):(<ol className="books-grid">
-          {books.map((book) => (
+          {Book.length ===0 ?(<div>No match</div>):(<ol className="books-grid">
+          {Book.map((book) => (
             <li key= {book.id}>
             <Book
               book={book}
