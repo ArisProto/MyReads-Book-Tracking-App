@@ -19,6 +19,9 @@ class BooksApp extends React.Component {
     })
   }
 
+  updateShelf = (book, shelf) => {
+    BooksAPI.update(book, shelf)
+
   render() {
     return (
       <div className="app">

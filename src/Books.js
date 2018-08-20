@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Book extends Component {
+class Books extends Component {
   render () {
     return(
       <div className="book">
@@ -8,7 +8,7 @@ class Book extends Component {
           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: book.imageLinks ? `url(${book.imageLinks.thumbnail})` : "" }}</div>
               <div className="book-shelf-changer">
                 <select
-                  onChange={(event) => this.props.changeShelf(this.props.book, event.target.value)}
+                  onChange={(event) => this.props.updateShelf(this.props.book, event.target.value)}
                   value={this.props.currentShelf}
                 >
                   <option value="move" disabled>Move to...</option>
@@ -26,4 +26,4 @@ class Book extends Component {
   }
 }
 
- export default Book;
+ export default Books;
