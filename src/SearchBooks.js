@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import Book from './Books.js'
 // import escapeRegExp from 'escape-string-regexp'
 // import sortBy from 'sort-by'
@@ -16,6 +17,7 @@ class SearchBooks extends Component {
     return (
     	<div className="search-books">
         <div className="search-books-bar">
+        <Link to="/" className="close-search">Back</Link>
           <div className="search-books-input-wrapper">
           {/*
             NOTES: The search from BooksAPI is limited to a particular set of search terms.
