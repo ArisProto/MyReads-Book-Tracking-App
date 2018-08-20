@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import * as BooksAPI from './BooksAPI'
 import Book from './Books.js'
 // import escapeRegExp from 'escape-string-regexp'
 // import sortBy from 'sort-by'
