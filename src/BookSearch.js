@@ -6,16 +6,14 @@ import { Link } from 'react-router-dom'
 class BookSearch extends Component {
   state = {
     query: '',
-
-    showingBooks: []
+    showingBooks: [],
+    shelfStatus: 'none'
   }
 
   updateQuery = (query) => {
     this.setState({ query })
-
     if (this.state.query) {
-      BooksAPI.search(query)
-      .then((qBooks) => {
+      BooksAPI.search(query).then((qBooks) => {
         if (qBooks instanceof Array) {
           qBooks.forEach( qBook => {
             qBook.shelf = 'none'
@@ -58,9 +56,9 @@ class BookSearch extends Component {
           <ol className="books-grid">
           {query && showingBooks.map( (book) => (
             (book.imageLinks) ?
-            <Book book={book} shelf={book.shelf} title={book.title} author={book.authors} img={book.imageLinks.thumbnail} key={book.id} updatingShelf={this.props.updatingShelf}/>
+            <Book book={book} shelfStatus={book.shelf} title={book.title} author={book.authors} img={book.imageLinks.thumbnail} key={book.id} updatingShelf={this.props.updatingShelf}/>
             :
-            <Book book={book} shelf={book.shelf} title={book.title} author={book.authors} key={book.id} updatingShelf={this.props.updatingShelf}/>
+            <Book book={book} shelfStatus={book.shelf} title={book.title} author={book.authors} key={book.id} updatingShelf={this.props.updatingShelf}/>
           ))}
           </ol>
 

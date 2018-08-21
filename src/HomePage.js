@@ -39,17 +39,15 @@ class HomePage extends Component {
                 <div className="bookshelf-books">
                   <ol className="books-grid">
 
-                    {books.filter(book => book.shelf === 'wantToRead')
-                      .map(book => (
-                        <li key={book.id} >
-                          <Book
-                            book={book}
-                            updatingShelf={this.props.updatingShelf}
-                            shelfStatus="wantToRead"
-                          />
-                        </li>
-                      ))
-                    }
+                    {books.filter(book => book.shelf === 'wantToRead').map(book => (
+                      <li key={book.id} >
+                        <Book
+                          book={book}
+                          updatingShelf={this.props.updatingShelf}
+                          shelfStatus="wantToRead"
+                        />
+                      </li>
+                    ))}
 
                   </ol>
                 </div>
@@ -59,18 +57,16 @@ class HomePage extends Component {
                 <div className="bookshelf-books">
                   <ol className="books-grid">
 
-                    {books.filter(book => book.shelf === 'read')
-                      .map(book => (
-                        <li key={book.id} >
-                          <Book
-                            book={book}
-                            updatingShelf={this.props.updatingShelf}
-                            shelfStatus="read"
-                          />
-                        </li>
-                      ))
-                    }
-                    
+                    {books.filter(book => book.shelf === 'read').map(book => (
+                      <li key={book.id} >
+                        <Book
+                          book={book}
+                          updatingShelf={this.props.updatingShelf}
+                          shelfStatus="read"
+                        />
+                      </li>
+                    ))}
+
                   </ol>
                 </div>
               </div>
