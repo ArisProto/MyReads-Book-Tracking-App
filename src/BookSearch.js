@@ -42,7 +42,7 @@ class BookSearch extends Component {
     return (
       <div className="search-books">
         <div className="search-books-bar">
-          <Link className="close-search" to="/">Close</Link>
+          <Link className="close-search" to="/">Return to Home Page</Link>
           <div className="search-books-input-wrapper">
             <input
               autoFocus="true"
@@ -63,7 +63,7 @@ class BookSearch extends Component {
             <Book book={book} shelf={book.shelf} title={book.title} author={book.authors} key={book.id} updatingShelf={this.props.updatingShelf}/>
           ))}
           </ol>
-          
+
         </div>
       </div>
     )
