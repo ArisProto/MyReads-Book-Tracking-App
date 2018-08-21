@@ -1,41 +1,50 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
-import './App.css'
-import HomePage from './HomePage.js'
-import SearchBooks from './SearchBooks.js'
+import './App.css';
+import HomePage from './HomePage'
+import BookSearch from './BookSearch'
 
-class BooksApp extends React.Component {
+class BooksApp extends Component {
   state = {
 
-    books: []
+    books: [],
   }
 
   componentDidMount() {
+    this.loadBook()
+  }
+
+  loadBook = () => {
     BooksAPI.getAll().then((books) => {
-      this.setState({ books })
+      this.setState({ books: books })
     })
   }
 
-  updateShelf = (book, shelf) => {
-    BooksAPI.update(book, shelf)
+  changeShelf = (book, shelf) => {
+    BooksAPI.update(book, shelf).then(() => {
+      this.loadBook()
+    })
   }
 
   render() {
     return (
       <div className="app">
+
         <Route exact path="/" render={() => (
           <HomePage
             books={this.state.books}
-            updateShelf={this.updateShelf}
+            changeShelf={this.changeShelf}
           />
         )}/>
-        <Route exact path="/search" render={() => (
-          <SearchBooks
-            updateShelf={this.updateShelf}
-            books={this.state.books}
+
+        <Route path="/search" render={() => (
+          <BookSearch
+          changeShelf={this.changeShelf}
+          books={this.state.books}
           />
         )}/>
+
       </div>
     )
   }
