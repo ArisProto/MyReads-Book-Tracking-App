@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom'
 class HomePage extends Component {
 
     render () {
+
+      const { books } = this.props
+
       return(
           <div className="list-books">
           <div className="list-books-title">
@@ -17,13 +20,13 @@ class HomePage extends Component {
                 <div className="bookshelf-books">
                   <ol className="books-grid">
                     {
-                      this.props.books.filter(book => book.shelf === 'currentlyReading')
+                      books.filter(book => book.shelf === 'currentlyReading')
                       .map(book => (
                         <li key={book.id} >
                           <Book
                             book={book}
                             updatingShelf={this.props.updatingShelf}
-                            ShelfStatus="currentlyReading"
+                            shelfStatus="currentlyReading"
                           />
                         </li>
                       ))
@@ -36,13 +39,13 @@ class HomePage extends Component {
                 <div className="bookshelf-books">
                   <ol className="books-grid">
                     {
-                      this.props.books.filter(book => book.shelf === 'wantToRead')
+                      books.filter(book => book.shelf === 'wantToRead')
                       .map(book => (
                         <li key={book.id} >
                           <Book
                             book={book}
                             updatingShelf={this.props.updatingShelf}
-                            ShelfStatus="wantToRead"
+                            shelfStatus="wantToRead"
                           />
                         </li>
                       ))
@@ -55,13 +58,13 @@ class HomePage extends Component {
                 <div className="bookshelf-books">
                   <ol className="books-grid">
                     {
-                      this.props.books.filter(book => book.shelf === 'read')
+                      books.filter(book => book.shelf === 'read')
                       .map(book => (
                         <li key={book.id} >
                           <Book
                             book={book}
                             updatingShelf={this.props.updatingShelf}
-                            ShelfStatus="read"
+                            shelfStatus="read"
                           />
                         </li>
                       ))

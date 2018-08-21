@@ -37,6 +37,7 @@ class BookSearch extends Component {
   }
 
   render() {
+
     const { query, showingBooks } = this.state
 
     return (
