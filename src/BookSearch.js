@@ -7,7 +7,6 @@ class BookSearch extends Component {
   state = {
     query: '',
     showingBooks: [],
-    shelfStatus: 'none'
   }
 
   updateQuery = (query) => {
