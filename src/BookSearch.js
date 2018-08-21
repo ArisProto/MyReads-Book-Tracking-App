@@ -57,9 +57,9 @@ class BookSearch extends Component {
           <ol className="books-grid">
           {query && showingBooks.map( (book) => (
             (book.imageLinks) ?
-            <Book book={book} shelf={book.shelf} title={book.title} author={book.authors} img={book.imageLinks.thumbnail} key={book.id} changeShelf={this.props.changeShelf}/>
+            <Book book={book} shelf={book.shelf} title={book.title} author={book.authors} img={book.imageLinks.thumbnail} key={book.id} updatingShelf={this.props.updatingShelf}/>
             :
-            <Book book={book} shelf={book.shelf} title={book.title} author={book.authors} key={book.id} changeShelf={this.props.changeShelf}/>
+            <Book book={book} shelf={book.shelf} title={book.title} author={book.authors} key={book.id} updatingShelf={this.props.updatingShelf}/>
           ))}
           </ol>
         </div>

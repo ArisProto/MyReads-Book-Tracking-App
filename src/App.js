@@ -21,7 +21,7 @@ class BooksApp extends Component {
     })
   }
 
-  changeShelf = (book, shelf) => {
+  updatingShelf = (book, shelf) => {
     BooksAPI.update(book, shelf).then(() => {
       this.loadBook()
     })
@@ -34,13 +34,13 @@ class BooksApp extends Component {
         <Route exact path="/" render={() => (
           <HomePage
             books={this.state.books}
-            changeShelf={this.changeShelf}
+            updatingShelf={this.updatingShelf}
           />
         )}/>
 
         <Route path="/search" render={() => (
           <BookSearch
-          changeShelf={this.changeShelf}
+          updatingShelf={this.updatingShelf}
           books={this.state.books}
           />
         )}/>

@@ -21,7 +21,7 @@ class HomePage extends Component {
                         <li key={book.id} >
                           <Book
                             book={book}
-                            changeShelf={this.props.changeShelf}
+                            updatingShelf={this.props.updatingShelf}
                             currentShelf="currentlyReading"
                           />
                         </li>
@@ -40,7 +40,7 @@ class HomePage extends Component {
                         <li key={book.id} >
                           <Book
                             book={book}
-                            changeShelf={this.props.changeShelf}
+                            updatingShelf={this.props.updatingShelf}
                             currentShelf="wantToRead"
                           />
                         </li>
@@ -59,7 +59,7 @@ class HomePage extends Component {
                         <li key={book.id} >
                           <Book
                             book={book}
-                            changeShelf={this.props.changeShelf}
+                            updatingShelf={this.props.updatingShelf}
                             currentShelf="read"
                           />
                         </li>
