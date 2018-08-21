@@ -5,9 +5,5 @@ import registerServiceWorker from './registerServiceWorker';
 import App from './App'
 import './index.css'
 
-
-{/*
-  *   Adding the React Router to our App!
-  */}
 ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'))
 registerServiceWorker();

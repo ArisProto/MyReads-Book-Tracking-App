@@ -3,10 +3,6 @@ import React, { Component } from 'react'
 class Book extends Component {
 
   render () {
-
-    {/*
-      *   makes code easier to read (gets rid of this.props in code later)
-      */}
     const { book, shelfStatus } = this.props
 
     return(
