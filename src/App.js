@@ -31,17 +31,17 @@ class BooksApp extends Component {
     return (
       <div className="app">
 
-        <Route exact path="/" render={() => (
-          <HomePage
-            books={this.state.books}
+        <Route path="/search" render={() => (
+          <BookSearch
             updatingShelf={this.updatingShelf}
+            books={this.state.books}
           />
         )}/>
 
-        <Route path="/search" render={() => (
-          <BookSearch
-          updatingShelf={this.updatingShelf}
-          books={this.state.books}
+        <Route exact path="/" render={() => (
+          <HomePage
+            updatingShelf={this.updatingShelf}
+            books={this.state.books}
           />
         )}/>
 
