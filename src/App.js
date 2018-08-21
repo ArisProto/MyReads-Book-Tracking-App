@@ -7,8 +7,9 @@ import { Route } from 'react-router-dom'
 
 class BooksApp extends Component {
   state = {
-
-    // List our books in an array to use later
+    {/*
+      *   List our books in an array to use later
+      */}
     books: [],
   }
 
@@ -22,7 +23,9 @@ class BooksApp extends Component {
     })
   }
 
-  // update function is asynchronus, so we put the getAll() function inside of it so it executes after!
+  {/*
+    *   update function is asynchronus, so we put the getAll() function inside of it so it executes after!
+    */}
   updatingShelf = (book, shelf) => {
     BooksAPI.update(book, shelf).then(() => {
       this.loadBook()
@@ -33,7 +36,9 @@ class BooksApp extends Component {
     return (
       <div className="app">
 
-        // Use the router to route to a URL path (doesn't have to be exact)!
+        {/*
+          *   Use the router to route to a URL path (doesn't have to be exact)!
+          */}
         <Route path="/search" render={() => (
           <BookSearch
             updatingShelf={this.updatingShelf}
@@ -41,7 +46,9 @@ class BooksApp extends Component {
           />
         )}/>
 
-        // Use the router to route to an exact URL path!
+        {/*
+          *   Use the router to route to an exact URL path!
+          */}
         <Route exact path="/" render={() => (
           <HomePage
             updatingShelf={this.updatingShelf}
