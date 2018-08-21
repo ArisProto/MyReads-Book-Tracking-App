@@ -4,7 +4,6 @@ import * as BooksAPI from './BooksAPI'
 import { Link } from 'react-router-dom'
 
 class BookSearch extends Component {
-
   state = {
     query: '',
     showingBooks: []
@@ -55,6 +54,7 @@ class BookSearch extends Component {
           </div>
         </div>
         <div className="search-books-results">
+
           <ol className="books-grid">
           {query && showingBooks.map( (book) => (
             (book.imageLinks) ?
@@ -63,6 +63,7 @@ class BookSearch extends Component {
             <Book book={book} shelf={book.shelf} title={book.title} author={book.authors} key={book.id} updatingShelf={this.props.updatingShelf}/>
           ))}
           </ol>
+          
         </div>
       </div>
     )

@@ -7,7 +7,6 @@ import { Route } from 'react-router-dom'
 
 class BooksApp extends Component {
   state = {
-
     books: [],
   }
 

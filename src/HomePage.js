@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 class HomePage extends Component {
 
     render () {
-
       const { books } = this.props
 
       return(
