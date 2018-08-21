@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import Book from './Books'
+import { Link } from 'react-router-dom'
 
 class HomePage extends Component {
+
     render () {
       return(
           <div className="list-books">
@@ -22,7 +23,7 @@ class HomePage extends Component {
                           <Book
                             book={book}
                             updatingShelf={this.props.updatingShelf}
-                            currentShelf="currentlyReading"
+                            ShelfStatus="currentlyReading"
                           />
                         </li>
                       ))
@@ -41,7 +42,7 @@ class HomePage extends Component {
                           <Book
                             book={book}
                             updatingShelf={this.props.updatingShelf}
-                            currentShelf="wantToRead"
+                            ShelfStatus="wantToRead"
                           />
                         </li>
                       ))
@@ -60,7 +61,7 @@ class HomePage extends Component {
                           <Book
                             book={book}
                             updatingShelf={this.props.updatingShelf}
-                            currentShelf="read"
+                            ShelfStatus="read"
                           />
                         </li>
                       ))
