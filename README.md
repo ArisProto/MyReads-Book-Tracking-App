@@ -13,7 +13,7 @@ The code is not perfect yet, but with a bit of time, it might just turn into som
 - start the server with `npm start`
 3. Visit the site in your browser at http://localhost:3000.
 
-## How to uses
+## How to use
 
 The App consists of a home Page and a page for searching books. On the home page you can organize your books into 3 categories (/shelfs): 'currently reading', 'want to read' and 'read' and you can delete or add books at will, by either clicking on the 'None' option (to delete a book from your shelfs) or by clicking on the plus button in the bottom right corner of your screen to be re-routed to the search page, in order to search for books that you can then add to your shelfs!
 
