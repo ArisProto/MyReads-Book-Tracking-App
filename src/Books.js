@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 class Book extends Component {
 
   render () {
+    // makes code easier to read (gets rid of this.props in code later)
     const { book, shelfStatus } = this.props
 
     return(
@@ -11,8 +12,7 @@ class Book extends Component {
           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: this.props.book.imageLinks ? `url(${this.props.book.imageLinks.thumbnail})` : "" }}></div>
             <div className="book-shelf-changer">
               <select
-                onChange={(event) => this.props.updatingShelf(book,
-                  event.target.value)}
+                onChange={(event) => this.props.updatingShelf(book, event.target.value)}
                 value={shelfStatus}
               >
                 <option value="move" disabled>Move to...</option>

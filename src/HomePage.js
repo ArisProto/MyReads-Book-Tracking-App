@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 class HomePage extends Component {
 
     render () {
+      // makes code easier to read (gets rid of this.props in code later)
       const { books } = this.props
 
       return(
@@ -19,6 +20,7 @@ class HomePage extends Component {
                 <div className="bookshelf-books">
                   <ol className="books-grid">
                     {
+                      // filter and then map books inorder to keep the ones we want
                       books.filter(book => book.shelf === 'currentlyReading')
                       .map(book => (
                         <li key={book.id} >
@@ -38,6 +40,7 @@ class HomePage extends Component {
                 <div className="bookshelf-books">
                   <ol className="books-grid">
                     {
+                      // filter and then map books inorder to keep the ones we want
                       books.filter(book => book.shelf === 'wantToRead')
                       .map(book => (
                         <li key={book.id} >
@@ -57,6 +60,7 @@ class HomePage extends Component {
                 <div className="bookshelf-books">
                   <ol className="books-grid">
                     {
+                      // filter and then map books inorder to keep the ones we want
                       books.filter(book => book.shelf === 'read')
                       .map(book => (
                         <li key={book.id} >
