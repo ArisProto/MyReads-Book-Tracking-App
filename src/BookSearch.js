@@ -15,23 +15,22 @@ class BookSearch extends Component {
 
     if (this.state.query) {
       BooksAPI.search(query)
-      .then((queryBooks) => {
-        if (queryBooks instanceof Array) {
-          queryBooks.forEach( queryBook => {
-            queryBook.shelf = 'none'
-            this.props.books.map( (bookInLibrary) => {
-              if (bookInLibrary.id === queryBook.id) {
-                queryBook.shelf = bookInLibrary.shelf
+      .then((qBooks) => {
+        if (qBooks instanceof Array) {
+          qBooks.forEach( qBook => {
+            qBook.shelf = 'none'
+            this.props.books.map( (libraryBook) => {
+              if (libraryBook.id === qBook.id) {
+                qBook.shelf = libraryBook.shelf
               }
-              return queryBook
+              return qBook
             })
           })
-          this.setState({ showingBooks: queryBooks})
+          this.setState({ showingBooks: qBooks})
         } else {
           this.setState({ showingBooks: []})
         }
       })
-      .catch( error => console.log(error) )
     } else {
       this.setState({ showingBooks: []})
     }
